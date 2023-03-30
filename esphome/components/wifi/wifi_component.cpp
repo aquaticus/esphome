@@ -515,6 +515,7 @@ void WiFiComponent::check_connecting_finished() {
       return;
     }
 
+    this->connected_timestamp_ = millis();
     ESP_LOGI(TAG, "WiFi Connected!");
     this->print_connect_params_();
 

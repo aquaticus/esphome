@@ -279,7 +279,11 @@ class WiFiComponent : public Component {
 
   int8_t wifi_rssi();
 
+  #define WIFI_CONNECTED_TIMESTAMP_AVAILABLE
+  uint32_t wifi_connected_timestamp() {return connected_timestamp_;}
+
  protected:
+  uint32_t connected_timestamp_{0};
   static std::string format_mac_addr(const uint8_t mac[6]);
   void setup_ap_config_();
   void print_connect_params_();
